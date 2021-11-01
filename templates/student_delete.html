@@ -1,0 +1,22 @@
+{% extends 'links.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container p-4 bg-info text-white text-center">
+		<h2>Student Delete</h2>
+	</div>
+	
+	<div class="container mt-4">
+		<hr>
+		<h4>Are You Sure Want To Delete : <span style="color: red; font-weight: bold;">  ( {{get_student.student_name}} S/O {{get_student.father_name}} ) </span> </h4>
+		<form action="" method="post">
+			{% csrf_token %}
+			<a href="{% url 'student_list' %}" class="btn btn-primary btn-sm">Back</a>
+			<input type="submit" name="" class="btn btn-danger btn-sm" value="Delete">
+		</form>
+		<hr>
+	</div>
+
+{% endblock %}

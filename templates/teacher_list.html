@@ -1,0 +1,50 @@
+{% extends 'links.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container p-4 bg-info text-white text-center">
+		<h2>Teacher List</h2>
+	</div>
+	
+	{% include 'nav.html' %}
+	<div class="container"><hr>
+		<a href="{% url 'add_teacher' %}" class="btn btn-success">Add Teacher</a>
+	</div>
+	<div class="container mt-3">
+		<table class="table table-bordered table-striped table-hover">
+			<tr>
+				<thead>
+					<th>Teacher Name</th>
+					<th>Qualification</th>
+					<th>Class</th>
+					<th>Religion</th>
+					<th>Experience</th>
+				
+					<th>Action</th>
+				</thead>
+			</tr>
+			<tbody>
+				{% for i in all_teachers %}
+				<tr>
+					<td>{{ i.teacher_name }}</td>
+					<td>{{ i.qualification }}</td>
+					<td>{{ i.select_class }}</td>
+					<td>{{ i.religion }}</td>
+					<td>{{ i.experience }}</td>
+					
+					<td>
+						<a href="" class="btn btn-success btn-sm">Update</a>
+						<a href="" class="btn btn-danger btn-sm">Remove</a>
+						<a href="{% url 'get_teacher_skills' i.id %}" class="btn btn-success btn-sm">View Skills</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</div>
+</body>
+
+{% endblock %}

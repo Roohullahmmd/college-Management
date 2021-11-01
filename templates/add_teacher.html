@@ -1,0 +1,50 @@
+{% extends 'links.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container p-4 bg-info text-white text-center">
+		<h2>Add Teacher</h2>
+	</div>
+
+	<div class="container mt-4">
+		<hr>
+		<a href="{% url 'teacher_list' %}" class="btn btn-primary">Back</a>
+		<hr>
+	</div>
+
+	<div class="container" style="width: 50%;">
+		<form action="" method="post">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-sm-12">
+					{{ teacher_form.teacher_name | as_crispy_field }}
+				</div>
+				<div class="col-sm-12">
+					{{ teacher_form.qualification | as_crispy_field }}
+				</div>
+				<div class="col-sm-12">
+					{{ teacher_form.select_class | as_crispy_field }}
+				</div>
+				<div class="col-sm-12">
+					{{ teacher_form.religion | as_crispy_field }}
+				</div>
+				<div class="col-sm-12">
+					{{ teacher_form.experience | as_crispy_field }}
+				</div>
+				<div class="col-sm-12">
+					{{ teacher_form.select_skills | as_crispy_field }}
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success btn-sm">Add</button>
+		</form>
+	</div>
+	<br>
+	<br>
+	
+</body>
+
+{% endblock %}

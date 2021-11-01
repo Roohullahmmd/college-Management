@@ -1,0 +1,32 @@
+{% extends 'links.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container p-4 bg-info text-white text-center">
+		<h2>Update subject</h2>
+	</div>
+
+	<div class="container mt-4">
+		<hr>
+		<a href="{% url 'subject_list' %}" class="btn btn-primary">Back</a>
+		<hr>
+	</div>
+	<div class="container">
+		<form>
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-sm-12">
+					{{subject_form | crispy}}
+				</div>
+			</div>
+			<input type="submit" name="" value="submit" class="btn btn-success">
+		</form>
+	</div>
+	
+</body>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Management</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+	<div class="container p-4 bg-info text-white text-center">
+		<h2>Dashboard</h2>
+	</div>
+
+	{% include 'nav.html' %}
+
+	<hr>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="card text-center font-weight-bol bg-success text-white">
+					<div class="card-header">
+						Total Teachers
+					</div>
+					<div class="card-body">
+						<h2>{{teacher_count}}</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card text-center font-weight-bol bg-secondary text-white">
+					<div class="card-header">
+						Total Students
+					</div>
+					<div class="card-body">
+						<h2>{{ student_count }}</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card text-center font-weight-bol bg-secondary text-white">
+					<div class="card-header">
+						Total Subjects
+					</div>
+					<div class="card-body">
+						<h2>{{ subject_count }}</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card text-center font-weight-bol bg-success text-white">
+					<div class="card-header">
+						Total Classes
+					</div>
+					<div class="card-body">
+						<h2>{{ class_count }}</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
